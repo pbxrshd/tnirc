@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="pragma" content="no-cache">
+
+
+
+  <title>Hermes - Raptor Detail</title>
+  <link rel="stylesheet" href="res/css/site.css">
+  <script src="res/js/site.js"></script>
+
+</head>
+<body id="raptor_detail">
+
+<div id="page_header" class="header-section">
+  <div class="header-left"><img src="res/img/main-menu.png" id="main_menu_icon" onclick="UI.clicked('main_menu_icon')" class="header-icon" /></div>
+  <div class="header-center">PAGE</div>
+  <div class="header-right"></div>
+</div><!-- #page_header -->
+
+
+<div class="body-section">
+
+  <div class="body-header section">
+   <div class="title"></div>
+   <div class="pic"><img src="" class="pic"></img></div>
+   <div class="temp"></div>
+   <div class="date"></div>
+
+  </div><!-- body-header -->
+
+  <div id="weight" class="section">
+    <div class="label">Weight</div>
+    <div class="control-col">
+      <div class="control" onclick="UI.clicked('log_control','weight')"></div>
+    </div>
+  </div>
+
+  <div id="rodent" class="section">
+    <div class="label">Rodent</div>
+    <div class="control-col">
+      <div class="control" onclick="UI.clicked('log_control','rodent')"></div>
+    </div>
+  </div>
+
+  <div id="quail" class="section">
+    <div class="label">Quail</div>
+    <div class="control-col">
+      <div class="control" onclick="UI.clicked('log_control','quail')"></div>
+    </div>
+  </div>
+
+  <div id="remains" class="section">
+    <div class="label">Remains</div>
+    <div class="control-col">
+      <div class="control" onclick="UI.clicked('log_control','remains')"></div>
+    </div>
+  </div>
+
+  <div id="casts" class="section">
+    <div class="label">Casts</div>
+    <div class="control-col">
+      <div class="control" onclick="UI.clicked('log_control','casts')"></div>
+    </div>
+  </div>
+
+  <div id="feces" class="section">
+    <div class="label">Feces</div>
+    <div class="control-col">
+      <div class="control" onclick="UI.clicked('log_control','feces')"></div>
+    </div>
+  </div>
+
+  <div id="urates" class="section">
+    <div class="label">Urates</div>
+    <div class="control-col">
+      <div class="control" onclick="UI.clicked('log_control','urates')"></div>
+    </div>
+  </div>
+
+  <div id="attitude" class="section">
+    <div class="label">Attitude</div>
+    <div class="control-col">
+      <div class="control" onclick="UI.clicked('log_control','attitude')"></div>
+    </div>
+  </div>
+
+  <div id="cleaning" class="section">
+    <div class="label">Cleaning</div>
+    <div class="control-col">
+      <div class="control" onclick="UI.clicked('log_control','cleaning')"></div>
+    </div>
+  </div>
+
+  <div id="water" class="section">
+    <div class="label">Water</div>
+    <div class="control-col">
+      <div class="control" onclick="UI.clicked('log_control','water')"></div>
+    </div>
+  </div>
+
+  <div id="exercise" class="section">
+    <div class="label">Exercise</div>
+    <div class="control-col">
+      <div class="control" onclick="UI.clicked('log_control','exercise')"></div>
+    </div>
+  </div>
+
+  <div id="weather" class="section">
+    <div class="label">Weather</div>
+    <div class="control-col">
+      <div class="control" onclick="UI.clicked('log_control','weather')"></div>
+    </div>
+  </div>
+
+  <!--
+  <div id="notes" class="section">
+    <div class="label">Notes</div>
+    <div class="control" onclick="UI.clicked('log_control','notes')"></div>
+  </div>
+  -->
+
+  <div id="main_menu" class="hide">
+    <a href="#" onclick="UI.clicked('main_menu','raptors')" class="main-menu-item">Raptors</a>
+    <a href="#" class="main-menu-item">Schedule</a>
+    <a href="#" class="main-menu-item">Reports</a>
+    <a href="#" class="main-menu-item">Settings</a>
+    <a href="#" class="main-menu-item">Help</a>
+  </div>
+
+  <div id="log_control_modal" class="hide">
+    <div class="modal-header">
+      <div class="header-left"><span onclick="UI.clicked('log_modal_header','cancel')">Cancel</span></div>
+      <div class="header-center"></div>
+      <div class="header-right"><span onclick="UI.clicked('log_modal_header','save')">Save</span></div>
+      <div class="header-sub">
+        <div class="title1"></div>
+        <div class="title2">weight in grams</div>
+      </div>
+    </div>
+    <div class="modal-body" onclick="UI.clicked('log_item', event)">
+      <ul>
+        <li class="item">Buy milk</li>
+        <li class="item">Take the dog for a walk</li>
+        <li class="item">Exercise</li>
+        <li class="item">Write code</li>
+        <li class="item">Play music</li>
+        <li class="item">Relax</li>
+      </ul>
+    </div>
+  </div><!-- #log_control_modal ->
+
+</div><!-- body-section -->
+
+<script>
+  UI.init("RAPTOR_DETAIL");
+</script>
+</body>
+</html>

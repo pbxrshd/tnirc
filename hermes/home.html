@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+  <title>Hermes</title>
+  <link rel="stylesheet" href="res/css/site.css">
+
+  <script>
+    function logoClicked(ref) {
+
+      if (ref.classList.contains("icon-active")) {
+        ref.classList.remove("icon-active");
+        ref.classList.add("icon-inactive");
+      } else {
+        ref.classList.remove("icon-inactive");
+        ref.classList.add("icon-active");
+      }
+
+      //alert("list " + document.querySelector("#test_id").classList);
+    }
+   var UI = (function() {
+     var VIEW = ""; // HOME | RAPTOR_OVERVIEW
+
+     function init(view) {
+       VIEW = view;
+
+       switch (VIEW) {
+         case "HOME":
+           //console.log("view is home");
+           document.querySelector("#main_menu").classList.add("hide");
+         break;
+         default:
+           console.log("unknown view");
+         break;
+       }
+     }
+
+     function clicked(ref, params) {
+       var id = ref.id;
+       switch (id) {
+         case "main_menu_icon":
+           var mainMenuRef = document.querySelector("#main_menu");
+           (mainMenuRef.classList.contains("hide"))?ref.classList.add("rotate90"):ref.classList.remove("rotate90");
+           toggle(mainMenuRef);
+         break;
+         case "go_raptor_detail":
+           location.replace("raptor-detail.html");
+         break;
+
+         default:
+           console.log("unknown id clicked: " + id);
+         break;
+       }
+       //console.log(ref.id);
+     }
+
+     function toggle(ref) {
+       if (ref.classList.contains("hide")) {
+         ref.classList.remove("hide");
+       } else {
+         ref.classList.add("hide");
+       }
+     }
+
+     return {
+       init : init,
+       clicked : clicked
+     }
+   })(); // UI
+
+  </script>
+</head>
+<body id="home">
+
+<div id="home_header" class="header-section">
+   <div class="header-left"><img src="res/img/main-menu.png" id="main_menu_icon" onclick="UI.clicked(this)" class="header-icon" /></div>
+   <div class="header-center">TITLE</div>
+   <div class="header-right">menu</div>
+</div><!-- #home_header -->
+
+<div class="body-section">
+
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui.
+    Mauris magna metus, dapibus nec turpis vel, semper malesuada ante.
+    Vestibulum id metus ac nisl bibendum scelerisque non non purus.
+    Suspendisse varius nibh non aliquet sagittis.
+</p>
+
+<img src="res/img/settings.png" id="go_raptor_detail" onclick="UI.clicked(this,{id:234})" class="header-icon" />
+
+<div style="background-color:#ECF0F1;height:840px;">nice background color</div>
+
+http://www.flaticon.com/packs
+
+<hr />
+<div id="main_menu">
+  <a href="#" class="main-menu-item">Trends</a>
+  <a href="#" class="main-menu-item">Schedule</a>
+  <a href="#" class="main-menu-item">Reports</a>
+  <a href="#" class="main-menu-item">Settings</a>
+  <a href="#" class="main-menu-item">Help</a>
+</div>
+
+</div><!-- body-section  -->
+
+<script>
+  UI.init("HOME");
+</script>
+</body>
+</html>
